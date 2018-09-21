@@ -252,7 +252,7 @@ public class Matrix {
 		
 		for(int i=0; i<this.imp.length;i++){
 			
-			newImp.setColumn(newImp.imp[0].length-1,this.getRow(i));
+			newImp.setColumn(newImp.imp[0].length-1-i,this.getRow(i));
 			System.out.println(Arrays.deepToString(newImp.imp));
 		}
 		
