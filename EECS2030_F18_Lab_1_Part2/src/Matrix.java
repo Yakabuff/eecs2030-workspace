@@ -246,23 +246,20 @@ public class Matrix {
 	public void rotateClockwise() {
 		/* Your Task */
 		System.out.println(Arrays.deepToString(this.imp));
-		int [][] newMatrix = new int[this.imp[0].length][this.imp.length];
-		
-		Matrix newImp = new Matrix (this.imp[0].length, this.imp.length );
-		
-		for(int i=0; i<this.imp.length;i++){
-			
-			newImp.setColumn(newImp.imp[0].length-1-i,this.getRow(i));
+		int[][] newMatrix = new int[this.imp[0].length][this.imp.length];
+
+		Matrix newImp = new Matrix(this.imp[0].length, this.imp.length);
+
+		for (int i = 0; i < this.imp.length; i++) {
+
+			newImp.setColumn(newImp.imp[0].length - 1 - i, this.getRow(i));
 			System.out.println(Arrays.deepToString(newImp.imp));
 		}
-		
-		
+
 		this.imp = newImp.imp;
-		
-		
-		//System.out.println(Arrays.deepToString(this.imp));
-		
-		
+
+		// System.out.println(Arrays.deepToString(this.imp));
+
 	}
 
 	/**
@@ -276,24 +273,23 @@ public class Matrix {
 	 */
 	public void shiftLeft() {
 		/* Your Task */
-		int maxColIndex = imp[0].length-1;
-		int [] firstCol = getColumn(0); // save first col
-		int [] lastCol = getColumn(maxColIndex);
-		
-		
-		//round 1 set first col to second col
-		//roud 2 set 2nd col to third
-		//round 3 set 3rd col to 4th
-		//last round set last col to original first
-		
-		for(int i=0; i<maxColIndex; i++){//loop through each col
-			setColumn(i, getColumn(i+1));
-			
+		int maxColIndex = imp[0].length - 1;
+		int[] firstCol = getColumn(0); // save first col
+		int[] lastCol = getColumn(maxColIndex);
+
+		// round 1 set first col to second col
+		// roud 2 set 2nd col to third
+		// round 3 set 3rd col to 4th
+		// last round set last col to original first
+
+		for (int i = 0; i < maxColIndex; i++) {
+			// loop through each col
+			setColumn(i, getColumn(i + 1));
+
 		}
-		
-		
+
 		setColumn(maxColIndex, firstCol);
-		
+
 	}
 
 	/**
@@ -307,21 +303,18 @@ public class Matrix {
 	 */
 	public void shiftUp() {
 		/* Your Task */
-		
-		int maxRowIndex = imp.length-1;
-		int [] firstRow = getRow(0); // save first col
-		int [] lastRow = getColumn(maxRowIndex);
-		
-		for(int i=0; i<maxRowIndex; i++){//loop through each col
-			setRow(i, getRow(i+1));
-			
+
+		int maxRowIndex = imp.length - 1;
+		int[] firstRow = getRow(0); // save first col
+		int[] lastRow = getColumn(maxRowIndex);
+
+		for (int i = 0; i < maxRowIndex; i++) {
+			// loop through each col
+			setRow(i, getRow(i + 1));
+
 		}
-		
+
 		setRow(maxRowIndex, firstRow);
-		
-		
-		
-		
 
 	}
 }
