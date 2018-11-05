@@ -24,7 +24,7 @@ public abstract class AbstractWordPuzzle {
 	public AbstractWordPuzzle() {
 		// COMPLETE THIS
 		this.puzzle = "";
-		
+
 	}
 
 	/**
@@ -61,13 +61,13 @@ public abstract class AbstractWordPuzzle {
 	 */
 	public SortedSet<String> getSolutions() {
 		// COMPLETE THIS
-		
-		SortedSet<String>solution = new TreeSet<String>();
-		
+
+		SortedSet<String> solution = new TreeSet<String>();
+
 		solution.add(getSolution());
-		
+
 		return solution;
-		
+
 	}
 
 	/**
@@ -100,7 +100,7 @@ public abstract class AbstractWordPuzzle {
 	 */
 	public String toString() {
 		// COMPLETE THIS
-		String s = this.getPuzzleWord()+ " "+":"+" "+ String.join(", ", this.getSolutions());
+		String s = this.getPuzzleWord() + " " + ":" + " " + String.join(", ", this.getSolutions());
 		return s;
 	}
 }

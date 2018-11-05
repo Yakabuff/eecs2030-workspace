@@ -24,7 +24,7 @@ public class ReverseWordPuzzle extends AbstractWordPuzzle {
 	public ReverseWordPuzzle(String puzzleWord) {
 		// COMPLETE THIS
 		super(puzzleWord);
-		
+
 		StringBuilder sol = new StringBuilder(puzzleWord);
 		sol.reverse();
 		this.solution = sol.toString();

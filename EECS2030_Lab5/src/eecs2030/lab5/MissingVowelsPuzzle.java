@@ -45,54 +45,53 @@ public class MissingVowelsPuzzle extends AbstractWordPuzzle {
 
 	/**
 	 * Constructs a missing vowels word puzzle for the solution word
-	 * {@code solution}. The puzzle word is the solution word with the
-	 * letters 'a', 'e', 'i', 'o', and 'u' replaced with an underscore '_'.
+	 * {@code solution}. The puzzle word is the solution word with the letters
+	 * 'a', 'e', 'i', 'o', and 'u' replaced with an underscore '_'.
 	 * 
 	 * @param solution
 	 *            a solution word
 	 */
 	public MissingVowelsPuzzle(String solution) {
 		// COMPLETE THIS
-		//construct puzzle word
-		super(computePuzzleWord(solution)); 
-		
+		// construct puzzle word
+		super(computePuzzleWord(solution));
+
 		solutions = new TreeSet<String>();
 		solutions.add(solution);
-		
+
 	}
 
 	/**
 	 * Constructs a missing vowels word puzzle for the solution word
-	 * {@code solution}. All other possible solutions should also be
-	 * provided.
+	 * {@code solution}. All other possible solutions should also be provided.
 	 * 
 	 * <p>
-	 * The additional solutions provided in {@code otherSolutions} are
-	 * checked to confirm that they produce the same puzzle word as
-	 * {@code solution} and an exception is thrown if one or more of
-	 * the words in {@code otherSolutions} does not produce the same
-	 * puzzle word as {@code solution}
+	 * The additional solutions provided in {@code otherSolutions} are checked
+	 * to confirm that they produce the same puzzle word as {@code solution} and
+	 * an exception is thrown if one or more of the words in
+	 * {@code otherSolutions} does not produce the same puzzle word as
+	 * {@code solution}
 	 * 
 	 * @param solution
 	 *            a solution word
 	 * @param otherSolutions
 	 *            all other solutions to the puzzle
 	 * @throws IllegalArgumentException
-	 *             if a word in otherSolutions is incompatible
-	 *             with solution
+	 *             if a word in otherSolutions is incompatible with solution
 	 */
 	public MissingVowelsPuzzle(String solution, String[] otherSolutions) {
 		// COMPLETE THIS
-		this(solution); 
-		
-		for(String s: otherSolutions){
-			if(this.getPuzzleWord().equals(computePuzzleWord(s))){ //check if otherSolutions produce same puzzle word as solution
-				solutions.add(s); //add to set
-			}else{
+		this(solution);
+
+		for (String s : otherSolutions) {
+			if (this.getPuzzleWord().equals(computePuzzleWord(s))) { 
+				
+				solutions.add(s); // add to set
+			} else {
 				throw new IllegalArgumentException();
 			}
-		}	
-		
+		}
+
 	}
 
 	/**
@@ -104,7 +103,7 @@ public class MissingVowelsPuzzle extends AbstractWordPuzzle {
 	@Override
 	public String getSolution() {
 		// COMPLETE THIS
-		
+
 		return solutions.first();
 	}
 
@@ -120,18 +119,18 @@ public class MissingVowelsPuzzle extends AbstractWordPuzzle {
 	@Override
 	public SortedSet<String> getSolutions() {
 		// COMPLETE THIS
-		SortedSet<String>sols = new TreeSet<String>();
-		
-		for(String i : this.solutions){
+		SortedSet<String> sols = new TreeSet<String>();
+
+		for (String i : this.solutions) {
 			sols.add(new String(i));
 		}
 		return sols;
 	}
 
 	/**
-	 * Compute the puzzle word corresponding to a {@code solution} word.
-	 * The puzzle word is the solution word with the letters 'a', 'e', 'i', 'o',
-	 * and 'u' replaced with an underscore '_'.
+	 * Compute the puzzle word corresponding to a {@code solution} word. The
+	 * puzzle word is the solution word with the letters 'a', 'e', 'i', 'o', and
+	 * 'u' replaced with an underscore '_'.
 	 * 
 	 * @param solution
 	 *            a solution word

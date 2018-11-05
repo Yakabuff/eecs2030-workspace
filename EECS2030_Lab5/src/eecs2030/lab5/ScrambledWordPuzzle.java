@@ -1,5 +1,8 @@
 package eecs2030.lab5;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A word puzzle where the puzzle word is formed by randomly shuffling the
@@ -31,7 +34,17 @@ public class ScrambledWordPuzzle extends AbstractWordPuzzle {
 		// The easiest way to scramble the letters is to put them
 		// into a list, use Collections.shuffle, and then convert the
 		// the shuffled list of letters back into a string.
-		super(solutionWord);
+
+		super("");
+		this.solution = solutionWord;
+
+		List<String> shuffle = new ArrayList<String>();
+		for (String i : solutionWord.split("")) {
+			shuffle.add(i);
+		}
+		Collections.shuffle(shuffle);
+		String puzzleWord = String.join("", shuffle);
+		super.setPuzzleWord(puzzleWord); // make puzzleword
 	}
 
 	/**
@@ -42,7 +55,7 @@ public class ScrambledWordPuzzle extends AbstractWordPuzzle {
 	@Override
 	public String getSolution() {
 		// COMPLETE THIS
-		
+		return solution;
 	}
 
 }
